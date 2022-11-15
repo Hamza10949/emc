@@ -12,6 +12,8 @@ class extproduction(models.Model):
      def _compute_ol_bags(self):
         if self.bom_id:
             self.ol_bags=self.product_qty/self.bom_id.product_qty
+        else:
+            self.ol_bags=""
 
 class extworkorder(models.Model):
     _inherit = "mrp.workorder"
@@ -22,3 +24,6 @@ class extworkorder(models.Model):
         if self.production_id:
 
             self.ol_bags=self.production_id.ol_bags
+        else:
+
+            self.ol_bags=""
