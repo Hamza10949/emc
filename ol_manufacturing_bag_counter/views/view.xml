@@ -27,8 +27,8 @@
                     <field name="sample_field"/>
                     <button name="preview_sample_binary" string="preview" class="oe_highlight" type="object" />
                 </div> -->
-                <label for="ol_bags" string="Bags" style="margin-left=3%"/>
-                <field name="ol_bags"/>
+                <label for="ol_bags" string="  Bags " class="oe_inline"/>
+                <field name="ol_bags" class="oe_inline" readonly="1"/>
             </xpath>
         </field>
     </record>
