@@ -21,7 +21,7 @@
         <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet"/>
         <field name="arch" type="xml">
            
-            <xpath expr="//div[@class='workorder_bar_left']/field[@name='product_uom_id']" position="after">
+            <xpath expr="//div[@class='workorder_bar_left o_workorder_bar_content']/field[@name='product_uom_id']" position="after">
                 <!-- <label for="sample_field"/>
                 <div class="o_row">
                     <field name="sample_field"/>
