@@ -16,6 +16,7 @@ class extproduction(models.Model):
 
 class extworkorder(models.Model):
     _inherit = "mrp.workorder"
+    allow_producing_quantity_change = fields.Boolean('Allow Changes to Producing Quantity', default=True)
     ol_bags = fields.Char(compute='_compute_ol_bags', string='Bags')
 
     @api.depends('production_id')
