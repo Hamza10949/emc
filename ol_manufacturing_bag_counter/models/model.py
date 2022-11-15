@@ -11,12 +11,15 @@ class extproduction(models.Model):
      
      @api.depends('product_qty')
      def _compute_ol_bags(self):
-        self.ol_bags=self.product_qty/self.bom_id.product_qty
+        if self.bom_id:
+            self.ol_bags=self.product_qty/self.bom_id.product_qty
 
 class extworkorder(models.Model):
     _inherit = "mrp.workorder"
     ol_bags = fields.Char(compute='_compute_ol_bags', string='Bags')
 
-    @api.depends('')
+    @api.depends('production_id')
     def _compute_ol_bags(self):
-        self.ol_bags=self.production_id.ol_bags
+        if self.production_id:
+
+            self.ol_bags=self.production_id.ol_bags
