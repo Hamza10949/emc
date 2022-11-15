@@ -16,8 +16,8 @@
         </field>
     </record>
     <record id="mrp_workorder_view_form_tablet_ext" model="ir.ui.view">
-        <field name="name">production_order</field>
-        <field name="model">mrp.production</field>
+        <field name="name">workorder_order</field>
+        <field name="model">mrp.workorder</field>
         <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet"/>
         <field name="arch" type="xml">
            

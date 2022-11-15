@@ -8,8 +8,6 @@ from odoo.exceptions import UserError
 class extproduction(models.Model):
      _inherit = "mrp.production"
      ol_bags = fields.Char(compute='_compute_ol_bags', string='Bags')
-     allow_producing_quantity_change = fields.Boolean('Allow Changes to Producing Quantity', default=True)
-     
      @api.depends('product_qty')
      def _compute_ol_bags(self):
         if self.bom_id:
