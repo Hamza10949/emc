@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+        <template id="report_lot_serial">
+            <t t-call="web.html_container">
+                  <t t-foreach="docs" t-as="s">
+                    <div class="page">
+                        <div class="container">
+                            <div style="display:inline-block;height:50px;width:50px;margin-bottom:80px">
+                                <img t-if="s.company_id.logo" t-att-src="image_data_uri(s.company_id.logo)" height="70" width="130"  class="float-left" alt="Logo"/></div>
+                            <div style="display:inline-block;margin-left:30%;">
+                                <h3 style="text-align:center;margin-top:10px;font-size:24px;">EMC Lot Traveller</h3>
+
+                                </div>
+                            <table style="border-bottom:2px solid black; margin-bottom:20px; width:100% ;font-size: 10px;">
+
+                                    </table>
+                            <center>
+                            <table style=" width: 50%; font-size: 10px;">
+                    <tbody>
+                    <tr>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Barcode: </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;"><strong><t t-esc="s.name" t-options='{"widget": "barcode", "width":"300","height":"60"}'/></strong></span></td>
+                    </tr>
+                        <tr>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Contents: </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;"><strong><t t-esc="s.name" /></strong></span></td>
+                    </tr>
+                         <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Production Date: </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;"><strong><t t-esc="s.create_date" t-options='{"widget": "date"}'/></strong></span></td>
+
+                    </tr>
+
+                         <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Total (LBS): </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;"><strong><t t-esc="s.product_qty"/></strong></span></td>
+
+                    </tr>
+                         <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Process Code:  </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;"><strong><t t-esc="s.process"/></strong></span></td>
+
+                    </tr>
+                         <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>PSI: </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;"><strong><t t-esc="s.psi"/></strong></span></td>
+
+                    </tr>
+                         <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>QA Samples  Collected: </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;"><strong><t t-esc="s.sample_collection"/></strong></span></td>
+
+                    </tr>
+                         <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Technician: </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;"><strong><t t-esc="s.technician"/></strong></span></td>
+
+
+                    </tr>
+                        <tr>
+
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Notes:      </strong></td>
+                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;"><span style=" font-size:17px;"><strong><t t-esc="s.note"/></strong></span></td>
+
+
+                    </tr>
+                    </tbody>
+                    </table>
+
+                            </center>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                  </t>
+
+
+
+
+
+
+
+
+
+
+
+
+            </t>
+        </template>
+    </data>
+</odoo>

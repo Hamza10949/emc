@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<report
+            id="report_lot_serial"
+            model="stock.production.lot"
+            report_type="qweb-pdf"
+            string="LOT Traveller"
+            name="ol_lusive_reports.report_lot_serial"
+            file="ol_lusive_reports.report_lot_serial"
+        />
+
+<report
+            id="report_bill_landing"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            string="Bill Landing"
+            name="ol_lusive_reports.report_bill_landing2"
+            file="ol_lusive_reports.report_bill_landing2"
+        />
+
+</odoo>

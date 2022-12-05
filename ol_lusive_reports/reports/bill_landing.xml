@@ -1,0 +1,153 @@
+<odoo>
+    <data>
+        <template id="ol_lusive_reports.report_bill_landing">
+            <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+                <t t-foreach="docs" t-as="s">
+                    <div class="page">
+                        <div class="container">
+                            <div style="display:inline-block;height:50px;width:50px;margin-bottom:80px">
+                                <img t-if="s.company_id.logo" t-att-src="image_data_uri(s.company_id.logo)" height="70"
+                                     width="130" class="float-left" alt="Logo"/>
+                            </div>
+                            <div style="display:inline-block;margin-left:30%;">
+                                <h3 style="text-align:center;margin-top:10px;font-size:28px;color:green;">Bill Landing
+                                </h3>
+                                <h3 style="text-align:center;margin-top:10px;font-size:24px;color:green;">Ecologic
+                                    Materials llc
+                                </h3>
+                            </div>
+                            <table style=" width: 100%; font-size: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 15px; padding-left: 4px;">
+                                             <strong>Date:</strong>
+                                            <t t-esc="s.scheduled_date" t-options='{"widget": "date"}'/>
+                                        </td>
+                                        <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 15px; padding-left: 4px;">
+                                            <strong> Shipping Instruction:</strong>
+                                            <t t-esc="s.shipping_instruction"/>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table style="width: 100%; font-size: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 15px; padding-left: 4px;">
+                                            <strong> Carrier:</strong>
+                                        </td>
+                                        <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 15px; padding-left: 4px;">
+                                            <strong> Bill No:</strong>
+                                            <t t-esc="s.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table style="width: 100%; font-size: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 15px; padding-left: 4px;">
+                                            <strong> Shipper Details:</strong>
+                                            <t t-esc="s.company_id.name + ' ' + s.company_id.street + ' ' + s.company_id.city"/>
+                                        </td>
+                                        <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 15px; padding-left: 4px;">
+                                            <strong> Consignee</strong>
+                                            <t t-esc="s.partner_id.name + ' ' + s.partner_id.street + ' ' + s.partner_id.city"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table style="width: 100%; height: 30px; border: 1px solid black;">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-right: 1px solid black; height: 10.5px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            No of Packages
+                                        </th>
+                                        <th style="border-right: 1px solid black; height: 6px; font-size: 15px; text-align: left; width: 40%; padding-left: 5px;">
+                                            Description
+                                        </th>
+                                        <th style="height: 6px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            Total Weight
+                                        </th>
+                                        <th style="height: 6px; font-size: 15px;border-left: 1px solid black; text-align: left; width: 20%; padding-left: 5px;">
+                                            Reference Number
+                                        </th>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--                        <table style="width: 100%; height: 40px;">-->
+                            <table style="border-bottom:1px solid black; border-right:1px solid black; border-left: 1px solid black;width:100%;">
+                                <tr t-foreach="docs.move_ids_without_package" t-as="l">
+                                    <td style="border-right: 1px solid black; height: 10.5px; text-align: left; width: 20%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.quantity_done" t-field="l.quantity_done"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 40%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.product_id.name" t-field="l.product_id.name"/>
+                                    </td>
+
+                                    <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <t t-if="l.product_id.weight">
+                                        <span style="font-size:12px;" t-esc="l.product_id.weight * l.quantity_done"/><span style="font-size:12px;"> K/g</span>
+                                        </t>
+                                    </td>
+
+                                    <td style="height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.product_id" t-field="l.product_id"/>
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <table class="table " style="width:100%; padding-top: 7%;">
+                                <tbody>
+                                    <td style="width:7%">
+                                        <t t-esc="s.prepared_by"/>
+                                        <hr style="height: 1px; border-width: 0; color: black; background-color: black;"/>
+
+                                        <span style='font-size: 13px;'>
+                                            <strong>Prepared By</strong>
+                                        </span>
+
+                                    </td>
+
+                                    <td style="width:13%">
+
+                                    </td>
+                                    <td style="width:7%">
+                                         <t t-esc="s.prepared_by"/>
+                                        <hr style="height: 1px; border-width: 0; color: black; background-color: black;"/>
+
+                                        <span style='font-size: 13px;'>
+                                            <strong>Delivered By</strong>
+                                        </span>
+
+                                    </td>
+                                    <td style="width:13%">
+
+                                    </td>
+
+
+                                    <td style="width:7%">
+                                        <img t-att-src="image_data_uri(s.signature)" style="max-height: 2cm; max-width: 4cm;"/>
+                                        <hr style="height: 1px; border-width: 0; color: black; background-color: black;"/>
+                                        <span style='font-size: 13px;'>
+                                            <strong>Received By</strong>
+                                        </span>
+                                        <!--<SPAN STYLE="text-decoration:overline; text-align: right;  font-size: 14px; font-weight:bold"> Sign. Depositor</SPAN> -->
+                                    </td>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </t>
+            </t>
+            </t>
+        </template>
+    </data>
+</odoo>
