@@ -6,8 +6,8 @@
             model="stock.production.lot"
             report_type="qweb-pdf"
             string="LOT Traveller"
-            name="ol_lusive_reports.report_lot_serial"
-            file="ol_lusive_reports.report_lot_serial"
+            name="ol_lusive_reports.ol_report_lot_serial"
+            file="ol_lusive_reports.ol_report_lot_serial"
         />
 
 <report
