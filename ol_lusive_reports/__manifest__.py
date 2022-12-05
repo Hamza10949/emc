@@ -15,10 +15,10 @@
 
     "data": [
         'views/main.xml',
-        'reports/report.xml',
         'reports/lot_traveller.xml',
         # 'reports/bill_landing.xml',
         'reports/bill_landing2.xml',
+        'reports/report.xml',
 
     ],
     "images": [ ],
