@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+    <template id="ol_lusive_reports.report_bill_landing2">
+
+
+<t t-call="web.html_container">
+        <t t-call="web.external_layout">
+
+
+
+
+            <t t-foreach="docs" t-as="o">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+            </t>
+        </t>
+</t>
+
+
+
+        </template>
+    </data>
+</odoo>
+
