@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
 
 <report
             id="report_lot_serial"
@@ -19,4 +19,4 @@
             file="ol_lusive_reports.report_bill_landing2"
         />
 
-</openerp>
+</odoo>
