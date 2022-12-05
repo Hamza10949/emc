@@ -3,7 +3,6 @@
         <template id="ol_report_lot_serial">
             <t t-call="web.basic_layout">
             <t t-call="web.html_container">
-
                   <t t-foreach="docs" t-as="s">
                     <div class="page">
                         <div class="container">
