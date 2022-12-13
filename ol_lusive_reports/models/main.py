@@ -6,12 +6,13 @@ import datetime
 
 
 class inheritincompany(models.Model):
-    _inherit = 'stock.production.lot'
+    _inherit = 'mrp.production'
 
-    process = fields.Char(string='Process Code')
+
     psi = fields.Char(string='PSI')
     sample_collection = fields.Char(string='QA Sample Collected')
     technician = fields.Char(string='Technician')
+    note = fields.Char(string='Note')
 
 class inheritincompany(models.Model):
     _inherit = 'stock.picking'

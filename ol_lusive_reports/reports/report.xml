@@ -3,7 +3,7 @@
 
 <report
             id="report_lot_serial"
-            model="stock.production.lot"
+            model="mrp.production"
             report_type="qweb-pdf"
             string="LOT Traveller"
             name="ol_lusive_reports.ol_report_lot_serial"

@@ -3,6 +3,7 @@
 <odoo>
 <data>
     <template id="ol_lusive_reports.report_bill_landing2">
+<t t-name="ol_lusive_reports.report_bill_landing2">
 
 
 <t t-call="web.html_container">
@@ -13,10 +14,137 @@
 
             <t t-foreach="docs" t-as="o">
                 <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                  <t t-foreach="docs" t-as="s">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <h1 style="text-align:center;color:green;">Bill Landing</h1>
+                        </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                          <div class="col-6">
+                            <b>Date: </b>
+                            <span t-esc="o.scheduled_date"></span>
+                          </div>
+                          <div class="col-6">
+                             <b>Shipping Instruction: </b>
+                            <span t-esc="o.shipping_instruction"></span>
+
+                          </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                          <div class="col-6">
+                            <b>Carrier: </b>
+                            <span t-esc="o.carrier_id.name"></span>
+                          </div>
+                          <div class="col-6">
+                            <b>Bill No: </b>
+                            <span t-esc="o.name"></span>
+                          </div>
+
+                        </div>
+                        <div class="row">
+                           <div class="col-6">
+                            <b>Shipping Details: </b><br/>
+                              <span t-field="o.company_id.name"></span> <br/>
+                              <span t-field="o.company_id.street"></span><br/>
+                              <span t-field="o.company_id.city"></span>
+
+                          </div>
+                          <div class="col-6">
+                            <b>Consignee: </b>
+                            <span t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+                          </div>
+                        </div>
+                        <br/>
+                        <table style="width: 100%; height: 30px; border: 1px solid black;">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-right: 1px solid black; height: 10.5px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            No of Packages
+                                        </th>
+                                        <th style="border-right: 1px solid black; height: 6px; font-size: 15px; text-align: left; width: 40%; padding-left: 5px;">
+                                            Description
+                                        </th>
+                                        <th style="height: 6px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            Total Weight
+                                        </th>
+                                        <th style="height: 6px; font-size: 15px;border-left: 1px solid black; text-align: left; width: 20%; padding-left: 5px;">
+                                            Reference Number
+                                        </th>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--                        <table style="width: 100%; height: 40px;">-->
+                            <table style="border-bottom:1px solid black; border-right:1px solid black; border-left: 1px solid black;width:100%;">
+                                <tr t-foreach="docs.move_ids_without_package" t-as="l">
+                                    <td style="border-right: 1px solid black; height: 10.5px; text-align: left; width: 20%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.quantity_done" t-field="l.quantity_done"/>
+                                    </td>
+                                    <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 40%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.product_id.name" t-field="l.product_id.name"/>
+                                    </td>
+
+                                    <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <t t-if="l.product_id.weight">
+                                        <span style="font-size:12px;" t-esc="l.product_id.weight * l.quantity_done"/><span style="font-size:12px;"> K/g</span>
+                                        </t>
+                                    </td>
+
+                                    <td style="height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.product_id" t-field="l.product_id"/>
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <br/><br/><br/>
+                            <div class="row">
+    <div class="col-2 mr-2 ">
+        <span t-esc="o.prepared_by"></span>
+        <hr style="height: 1px; border-width: 250; color: black; background-color: black;"/>
+        <span style='font-size: 12px;'>
+            <strong>Prepared By</strong>
+        </span>
+    </div>
+    <div class="col-2 mr-2 ">
+    </div>
+    <div class="col-2 mr-2 ">
+
+        <span t-esc="o.delivered_by"></span>
+        <hr style="height: 1px; border-width: 250; color: black; background-color: black;"/>
+        <span style='font-size: 12px;'>
+            <strong>Delivered By</strong>
+        </span>
+        <div class="col-2 mr-2 ">
+        </div>
+    </div>
+    <div class="col-2 mr-2 ">
+    </div>
+
+    <div class="col-2">
+       <div t-if="o.signature">
+        <img t-att-src="image_data_uri(o.signature)" style="max-height: 2cm; max-width: 4cm;"/>
+        </div>
+        <div style="border-top: 1px solid black;"></div>
+        <span style='font-size: 12px;'>
+            <strong>Received By</strong>
+        </span>
+
+    </div>
+</div>
+                                </div>
+                </t>
+
             </t>
         </t>
 </t>
 
+
+
+        </t>
 
 
         </template>
