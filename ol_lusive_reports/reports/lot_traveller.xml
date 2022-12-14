@@ -24,7 +24,7 @@
                     </tr>
                         <tr>
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Contents: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_producing_id.name"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;padding-left:4px;">Internal Reference<strong> <t t-esc="s.lot_producing_id.name"/></strong></span></td>
                     </tr>
                          <tr>
 
