@@ -18,7 +18,7 @@
         'reports/report.xml',
         'reports/lot_traveller.xml',
         'reports/lot_traveller_reference.xml',
-        # 'reports/delivery_document.xml',
+        'reports/delivery_document.xml',
         # 'reports/bill_landing.xml',
         'reports/bill_landing2.xml',
 
