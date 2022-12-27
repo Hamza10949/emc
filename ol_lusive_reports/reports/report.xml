@@ -19,7 +19,7 @@
             file="ol_lusive_reports.report_bill_landing2"
         />
 <report
-            id="report_delivery_document"
+            id="report_delivery_document_ref"
             model="stock.picking"
             report_type="qweb-pdf"
             string="Delivery Document"
