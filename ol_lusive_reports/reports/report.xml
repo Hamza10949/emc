@@ -18,14 +18,14 @@
             name="ol_lusive_reports.report_bill_landing2"
             file="ol_lusive_reports.report_bill_landing2"
         />
-<report
-            id="report_delivery_document"
-            model="stock.picking"
-            report_type="qweb-pdf"
-            string="Delivery Document"
-            name="ol_lusive_reports.report_delivery_document"
-            file="ol_lusive_reports.report_delivery_document"
-        />
+<!--<report-->
+<!--            id="report_delivery_document"-->
+<!--            model="stock.picking"-->
+<!--            report_type="qweb-pdf"-->
+<!--            string="Delivery Document"-->
+<!--            name="ol_lusive_reports.report_delivery_document"-->
+<!--            file="ol_lusive_reports.report_delivery_document"-->
+<!--        />-->
 
 
 
