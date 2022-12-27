@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <template id="report_delivery_document">
+            <t t-call="web.basic_layout">
+            <t t-call="web.html_container">
+                  <t t-foreach="docs" t-as="s">
+                    <div class="page">
+                        <div class="container">
+                            <div style="display:inline-block;height:50px;width:50px;margin-bottom:80px">
+                                <img t-if="s.company_id.logo" t-att-src="image_data_uri(s.company_id.logo)" height="70" width="130"  class="float-left" alt="Logo"/></div>
+                            <div style="display:inline-block;margin-left:30%;">
+                                <h3 style="text-align:center;margin-top:10px;font-size:24px;">EMC Lot Traveller</h3>
+
+                                </div>
+                            <table style="border-bottom:2px solid black; margin-bottom:20px; width:100% ;font-size: 10px;">
+
+                                    </table>
+                            <center>
+
+                                 <table style="width: 100%; height: 30px; border: 1px solid black;">
+                                <tbody>
+                                    <tr>
+                                        <th style="border-right: 1px solid black; height: 10.5px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            Internal Reference
+                                        </th>
+                                        <th style="border-right: 1px solid black; height: 10.5px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            Product Name
+                                        </th>
+                                        <th style="border-right: 1px solid black; height: 6px; font-size: 15px; text-align: left; width: 20%; padding-left: 5px;">
+                                            Product Weight
+                                        </th>
+                                        <th style="height: 6px; font-size: 15px; text-align: left; width: 40%; padding-left: 5px;">
+                                            Company Address
+                                        </th>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--                        <table style="width: 100%; height: 40px;">-->
+                            <table style="border-bottom:1px solid black; border-right:1px solid black; border-left: 1px solid black;width:100%;">
+                                <tr t-foreach="docs.move_ids_without_package" t-as="l">
+
+                                    <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.product_id.name" t-field="l.product_id.default_code"/>
+                                    </td>
+                                     <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.product_id.name" t-field="l.product_id.name"/>
+                                    </td>
+
+                                    <td style="border-right: 1px solid black; height: 6px; text-align: left;  width: 20%;padding-left: 5px;">
+                                        <t t-if="l.product_id.weight">
+                                        <span style="font-size:12px;" t-esc="l.product_id.weight * l.quantity_done"/><span style="font-size:12px;"> K/g</span>
+                                        </t>
+                                    </td>
+
+                                    <td style="height: 6px; text-align: left;  width: 40%;padding-left: 5px;">
+                                        <span style="font-size:12px;" t-if="l.company_id.street" t-field="l.company_id.street"/>
+                                    </td>
+
+                                </tr>
+                            </table>
+
+                            </center>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                  </t>
+
+
+
+
+
+
+
+
+
+
+
+
+            </t>
+            </t>
+        </template>
+    </data>
+</odoo>

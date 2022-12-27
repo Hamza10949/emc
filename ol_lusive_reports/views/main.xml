@@ -1,6 +1,6 @@
 <odoo>
     <data>
-         <record id="stock_production_inherit" model="ir.ui.view">
+         <record id="stock_production_inherittttt" model="ir.ui.view">
             <field name="name">mrp.production.form</field>
             <field name="model">mrp.production</field>
             <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
@@ -10,6 +10,7 @@
                        <field name="sample_collection"/>
                        <field name="technician"/>
                        <field name="note"/>
+                       <field name="plastic_source"/>
                     </xpath>
         </field>
     </record>
@@ -24,8 +25,37 @@
                        <field name="prepared_by"/>
                         <field name="delivered_by"/>
                     </xpath>
+
         </field>
     </record>
+         <record id="stock_production_inherit" model="ir.ui.view">
+            <field name="name">stock.production.form</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//field[@name='company_id']" position="after">
+                     <button name="lot_traveller" type="object" string="Lot Traveller" class="oe_highlight"/>
+                    <field name="lot_traveller_ref" invisible="1"/>
+
+                </xpath>
+
+        </field>
+    </record>
+<!--          <record id="mrp_production_form_ext" model="ir.ui.view">-->
+<!--        <field name="name">production_order</field>-->
+<!--        <field name="model">mrp.production</field>-->
+<!--        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+
+<!--            <xpath expr="//field[@name='user_id']" position="after">-->
+
+<!--                <field name="psi"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
 
 
 

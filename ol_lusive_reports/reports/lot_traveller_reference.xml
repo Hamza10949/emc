@@ -1,9 +1,9 @@
 <odoo>
     <data>
-        <template id="ol_report_lot_serial">
+        <template id="ol_report_lot_traveller_ref">
             <t t-call="web.basic_layout">
             <t t-call="web.html_container">
-                  <t t-foreach="docs" t-as="s">
+                   <t t-foreach="docs" t-as="s">
                     <div class="page">
                         <div class="container">
                             <div style="display:inline-block;height:50px;width:50px;margin-bottom:80px">
@@ -20,61 +20,61 @@
                     <tbody>
                     <tr>
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Barcode: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_producing_id.name" t-options='{"widget": "barcode", "width":"300","height":"60"}'/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.name" t-options='{"widget": "barcode", "width":"300","height":"60"}'/></strong></span></td>
                     </tr>
                         <tr>
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Contents: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;padding-left:4px;"> <strong> <t t-esc="s.lot_producing_id.name"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"> <span style=" font-size:17px;padding-left:4px;"> <strong> <t t-esc="s.name"/></strong></span></td>
                     </tr>
                          <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Production Date: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.create_date" t-options='{"widget": "date"}'/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_traveller_ref.create_date" t-options='{"widget": "date"}'/></strong></span></td>
 
                     </tr>
 
                          <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Total (LBS): </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.product_qty"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_traveller_ref.product_qty"/></strong></span></td>
 
                     </tr>
                          <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Process Code:  </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.name" /></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_traveller_ref.name" /></strong></span></td>
 
                     </tr>
                          <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>PSG: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.psi"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_traveller_ref.psi"/></strong></span></td>
 
                     </tr>
                          <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>QA Samples  Collected: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.sample_collection"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_traveller_ref.sample_collection"/></strong></span></td>
 
                     </tr>
                          <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Technician: </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.technician"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 13px;"><span style=" font-size:17px;padding-left:4px;"><strong><t t-esc="s.lot_traveller_ref.technician"/></strong></span></td>
 
 
                     </tr>
                         <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Notes:      </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;padding-left:4px;"><span style=" font-size:17px;"><strong><t t-esc="s.note"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;padding-left:4px;"><span style=" font-size:17px;"><strong><t t-esc="s.lot_traveller_ref.note"/></strong></span></td>
 
 
                     </tr>
                         <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Plastic Source:      </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;padding-left:4px;"><span style=" font-size:17px;"><strong><t t-esc="s.plastic_source"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;padding-left:4px;"><span style=" font-size:17px;"><strong><t t-esc="s.lot_traveller_ref.plastic_source"/></strong></span></td>
 
 
                     </tr>
@@ -92,18 +92,6 @@
                         </div>
                     </div>
                   </t>
-
-
-
-
-
-
-
-
-
-
-
-
             </t>
             </t>
         </template>
