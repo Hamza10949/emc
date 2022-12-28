@@ -18,6 +18,12 @@ class extproduction(models.Model):
 class extworkorder(models.Model):
     _inherit = "mrp.workorder"
     ol_bags = fields.Char(compute='_compute_ol_bags', string='Bags')
+    psii = fields.Char(string='PSI', related='finished_lot_id.lot_traveller_ref.psi')
+    sample_collection = fields.Char(string='QA Sample Collected', related = 'finished_lot_id.lot_traveller_ref.sample_collection')
+    technician = fields.Char(string='Technician', related = 'finished_lot_id.lot_traveller_ref.technician')
+    note = fields.Char(string='Note', related = 'finished_lot_id.lot_traveller_ref.note')
+    plastic_source = fields.Char(string='Plastic Source', related = 'finished_lot_id.lot_traveller_ref.plastic_source')
+
 
     @api.depends('production_id')
     def _compute_ol_bags(self):

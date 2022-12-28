@@ -6,12 +6,10 @@
         <field name="arch" type="xml">
            
             <xpath expr="//field[@name='user_id']" position="after">
-                <!-- <label for="sample_field"/>
-                <div class="o_row">
-                    <field name="sample_field"/>
-                    <button name="preview_sample_binary" string="preview" class="oe_highlight" type="object" />
-                </div> -->
+
                 <field name="ol_bags"/>
+
+
             </xpath>
         </field>
     </record>
@@ -27,9 +25,42 @@
                     <field name="sample_field"/>
                     <button name="preview_sample_binary" string="preview" class="oe_highlight" type="object" />
                 </div> -->
+
+
+                <div>
                 <label for="ol_bags" string="  Bags " class="oe_inline"/>
-                <field name="ol_bags" class="oe_inline" readonly="1"/>
+                <field name="ol_bags" class="oe_inline" readonly="1" style="font-size: 10px;"/>
+                </div><br/><div>
+                <label for="psii" string="PSG" class="oe_inline"/>
+                <field name="psii" class="oe_inline" readonly="1" style="font-size: 10px;"/></div>
+<!--                <label for="sample_collection" string="Sample Collection" class="oe_inline"/>-->
+<!--                <field name="sample_collection" class="oe_inline" readonly="1"/>-->
+<!--                <label for="technician" string="Technician" class="oe_inline"/>-->
+<!--                <field name="technician" class="oe_inline" readonly="1"/>-->
+<!--                <label for="note" string="Note" class="oe_inline"/>-->
+<!--                <field name="note" class="oe_inline" readonly="1"/>-->
+<!--                <label for="plastic_source" string="Plastic Source" class="oe_inline"/>-->
+<!--                <field name="plastic_source" class="oe_inline" readonly="1"/>-->
+
             </xpath>
+             <xpath expr="//button[@name='action_generate_serial']" position="after">
+                  <label for="sample_collection" string="Sample Collection" class="oe_inline"/>
+                <field name="sample_collection" class="oe_inline" readonly="1" style="font-size: 10px;"/>
+                <label for="technician" string="Technician" class="oe_inline"/>
+                <field name="technician" class="oe_inline" readonly="1" style="font-size: 10px;"/>
+                 <label for="note" string="Note" class="oe_inline"/>
+                <field name="note" class="oe_inline" readonly="1" style="font-size: 10px;"/>
+                 <label for="plastic_source" string="Plastic Source" class="oe_inline"/>
+                <field name="plastic_source" class="oe_inline" readonly="1" style="font-size: 10px;"/>
+
+
+
+             </xpath>
+
+
+
+
+
         </field>
     </record>
 
