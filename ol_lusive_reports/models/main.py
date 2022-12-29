@@ -12,7 +12,7 @@ class inheritincompany(models.Model):
     psi = fields.Char(string='PSG')
     sample_collection = fields.Char(string='QA Sample Collected')
     technician = fields.Char(string='Technician')
-    note = fields.Char(string='Note')
+    notee = fields.Char(string='Note')
     plastic_source = fields.Char(string='Plastic Source')
 
 
@@ -44,11 +44,6 @@ class inheritinstockproductionlot(models.Model):
 
 
     def lot_traveller(self):
-        print('hello')
-        ref = self.env['mrp.production'].search([('lot_producing_id','=', self.name)])
-
-        self.lot_traveller_ref = ref.id
-
-
-
+        reference = self.env['mrp.production'].search([('lot_producing_id','=', self.name)])
+        self.lot_traveller_ref = reference.id
         return self.env.ref('ol_lusive_reports.report_lot_serial_ref').report_action(self)

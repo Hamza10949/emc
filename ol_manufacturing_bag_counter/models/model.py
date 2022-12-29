@@ -21,7 +21,7 @@ class extworkorder(models.Model):
     psii = fields.Char(string='PSI', related='production_id.psi')
     sample_collection = fields.Char(string='QA Sample Collected', related = 'production_id.sample_collection')
     technician = fields.Char(string='Technician', related = 'production_id.technician')
-    note = fields.Char(string='Note', related = 'production_id.note')
+    notee = fields.Char(string='Note', related = 'production_id.notee')
     plastic_source = fields.Char(string='Plastic Source', related = 'production_id.plastic_source')
 
 

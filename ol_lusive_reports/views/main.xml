@@ -9,7 +9,7 @@
                        <field name="psi"/>
                        <field name="sample_collection"/>
                        <field name="technician"/>
-                       <field name="note"/>
+                       <field name="notee"/>
                        <field name="plastic_source"/>
                     </xpath>
         </field>
@@ -37,7 +37,7 @@
 
                 <xpath expr="//field[@name='company_id']" position="after">
                      <button name="lot_traveller" type="object" string="Lot Traveller" class="oe_highlight"/>
-                    <field name="lot_traveller_ref" invisible="1"/>
+                    <field name="lot_traveller_ref" />
 
                 </xpath>
 
