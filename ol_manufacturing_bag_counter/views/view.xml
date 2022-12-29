@@ -52,19 +52,19 @@
 <!--            </xpath>-->
             <xpath expr="//div[@class='o_workorder_data']" position="before">
                   <label for="ol_bags" string="  Bags " class="oe_inline"/>
-                <field name="ol_bags" class="oe_inline" readonly="1" style="font-size: 10px;"/>
+                <field name="ol_bags" class="oe_inline" readonly="1" style="font-size: 14px;color:red;"/>
 
                 <label for="psii" string="PSG" class="oe_inline"/>
-                <field name="psii" class="oe_inline" readonly="1" style="font-size: 10px;color:red;"/>
+                <field name="psii" class="oe_inline" readonly="1" style="font-size: 14px;color:red;"/>
                   <label for="sample_collection" string="Sample Collection" class="oe_inline"/>
-                <field name="sample_collection" class="oe_inline" readonly="1" style="font-size: 10px;color:red;"/>
+                <field name="sample_collection" class="oe_inline" readonly="1" style="font-size: 14px;color:red;"/>
 
                 <label for="technician" string="Technician" class="oe_inline"/>
-                <field name="technician" class="oe_inline" readonly="1" style="font-size: 10px;color:red;"/>
+                <field name="technician" class="oe_inline" readonly="1" style="font-size: 14px;color:red;"/>
                  <label for="note" string="Note" class="oe_inline"/>
-                <field name="note" class="oe_inline" readonly="1" style="font-size: 10px;color:red;"/>
+                <field name="note" class="oe_inline" readonly="1" style="font-size: 14px;color:red;"/>
                  <label for="plastic_source" string="Plastic Source" class="oe_inline"/>
-                <field name="plastic_source" class="oe_inline" readonly="1" style="font-size: 10px;color:red;"/>
+                <field name="plastic_source" class="oe_inline" readonly="1" style="font-size: 14px;color:red;"/>
             </xpath>
 
 
