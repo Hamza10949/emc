@@ -67,7 +67,7 @@
                         <tr>
 
                     <td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black;  font-size: 17px;padding-left:4px;"><strong>Notes:      </strong></td>
-                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;padding-left:4px;"><span style=" font-size:17px;"><strong><t t-esc="s.lot_traveller_ref.note"/></strong></span></td>
+                    <td style="width: 25%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: left; font-size: 17px;padding-left:4px;"><span style=" font-size:17px;"><strong><t t-esc="s.lot_traveller_ref.notee"/></strong></span></td>
 
 
                     </tr>
